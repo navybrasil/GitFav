@@ -1,21 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  font-size: 62.5%;
+
+  --bg-primary: hsl(0, 0%, 0%);
+  --bg-input: hsl(191, 65%, 7%);
+  --bg-button: hsl(195, 91%, 25%);
+  --bg-button-hover: hsl(0, 0%, 100%);
+
+  --text-color: hsl(0, 0%, 100%);
+  --text-color-hover: hsla(195, 91%, 25%, 1);
+  --text-placeholder: hsla(240, 6%, 51%, 1);
+}
+
+/* Fonts */
+
+.search,
 input {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
 
-table th {
+table th,
+button p {
   font-family: "Roboto", sans-serif;
   font-weight: 700;
   font-style: normal;
 }
-
-/*
-<uniquifier>: Use a uniquifier for the class name
-<weight>: Use a value from 100 to 700
-
-*/
-
 .roboto-mono {
   font-family: "Roboto Mono", monospace;
   font-optical-sizing: auto;
@@ -23,9 +38,59 @@ table th {
   font-style: normal;
 }
 
-* {
-}
+/* styles */
 body {
-  background: #000;
-  color: #fff;
+  font-size: 1.6rem;
+  background: var(--bg-primary);
+  color: var(var(--text-color));
+  width: 100vw;
+  height: 100vh;
+}
+body #app {
+}
+
+header {
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+nav input {
+  background: var(--bg-input);
+  width: 46.2rem;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 1.6rem;
+}
+
+::placeholder {
+  font-size: 1.6rem;
+  color: var(--text-placeholder);
+}
+
+nav button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  padding: 1.2rem 3.2rem;
+  background: var(--bg-button);
+  color: var(--text-color);
+
+  border: none;
+  border-radius: 0.5rem;
+}
+
+nav button p {
+  font-size: 1.4rem;
 }
