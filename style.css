@@ -10,10 +10,13 @@
   --bg-input: hsl(191, 65%, 7%);
   --bg-button: hsl(195, 91%, 25%);
   --bg-button-hover: hsl(0, 0%, 100%);
+  --bg-table-primary: hsla(194, 72%, 13%, 1);
+  --bg-table-border: rgba(255, 9, 1, 0.952);
 
   --text-color: hsl(0, 0%, 100%);
   --text-color-hover: hsla(195, 91%, 25%, 1);
   --text-placeholder: hsla(240, 6%, 51%, 1);
+  --text-table: hsl(240, 9%, 89%);
 }
 
 /* Fonts */
@@ -47,6 +50,8 @@ body {
   height: 100vh;
 }
 body #app {
+  margin: 0 auto;
+  width: 112rem;
 }
 
 header {
@@ -93,4 +98,32 @@ nav button {
 
 nav button p {
   font-size: 1.4rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+
+  box-shadow: 0 1rem 2rem -1rem rgba(0, 0, 0, 0.3);
+}
+
+table * {
+  font-size: 2rem;
+  color: var(--text-table);
+}
+
+table th {
+  background: var(--bg-table-primary);
+  padding: 1.6rem 4rem;
+
+  text-align: left;
+  font-weight: normal;
+}
+
+table th:first-child {
+  border-top-left-radius: 1.5rem;
+}
+
+table th:last-child {
+  border-top-right-radius: 1.5rem;
 }
