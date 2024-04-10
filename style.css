@@ -6,6 +6,9 @@
 :root {
   font-size: 62.5%;
 
+  --primary-font: "Roboto", sans-serif;
+  --secondary-font: "Roboto Mono", monospace;
+
   --bg-primary: hsl(0, 0%, 0%);
   --bg-input: hsl(191, 65%, 7%);
   --bg-button: hsl(195, 91%, 25%);
@@ -13,7 +16,7 @@
   --bg-table-primary: hsla(194, 72%, 13%, 1);
   --bg-table-border: hsla(191, 31%, 42%, 1);
   --bg-table-odd: hsla(195, 61%, 6%, 0.5);
-	--bg-table-even: hsla(192, 65%, 7%, 1)
+  --bg-table-even: hsla(192, 65%, 7%, 1);
 
   --text-color: hsl(0, 0%, 100%);
   --text-color-hover: hsla(195, 91%, 25%, 1);
@@ -104,13 +107,22 @@ nav button p {
   font-size: 1.4rem;
 }
 
+main {
+  margin-top: 8.7rem;
+  box-shadow: -2px 15px 2rem 0px rgb(0 0 0 / 50%);
+  border: 2px solid var(--bg-table-border);
+  border-radius: 2rem;
+  overflow: hidden;
+}
+
 table {
   width: 100%;
+  border: 1px solid var(--bg-table-border);
   border-collapse: collapse;
-
-  box-shadow: 0 1rem 2rem -1rem rgba(0, 0, 0, 0.3);
-
-  margin-top: 8.7rem;
+  border-radius: 1.2rem 1.2rem 0 0;
+  overflow: hidden;
+  box-shadow: 0px 1px 2rem -1px rgb(0 0 0 / 50%);
+  background: var(--bg-table-primary);
 }
 
 table * {
@@ -122,26 +134,16 @@ table th {
   background: var(--bg-table-primary);
   padding: 1.6rem 4rem;
 
-
-	text-align: left;
-	font-weight: normal;
-}
-
-
-table th:first-child {
-	border-top-left-radius: 1.5rem;
-}
-
-table th:last-child {
-	border-top-right-radius: 1.5rem;
+  text-align: left;
+  font-weight: normal;
 }
 
 table tr:nth-child(odd) {
-	background: var(--bg-table-odd);
+  background: var(--bg-table-odd);
 }
 
-tr + tr{
-	border: 1px solid var(--bg-table-border);
+tr + tr {
+  border: 1px solid var(--bg-table-border);
 }
 
 table tr:nth-child(even) {
@@ -149,37 +151,61 @@ table tr:nth-child(even) {
 }
 
 table td {
-	padding: 1.6rem 4rem;
-	text-align: left;
+  padding: 1.6rem 4rem;
+  text-align: left;
 }
 
-td.user{
-	display: flex;
-	align-items: center;
-	gap: 1rem;
+td.user {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
-td.user img{
-	width: 5rem;
-	height: 5rem;
+td.user img {
+  width: 5rem;
+  height: 5rem;
 
-	object-fit: cover;
-	border-radius: 50%;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 td.user a {
-	text-decoration: none;
+  text-decoration: none;
 }
 
-td.user p{
-	font-weight: bold;
+td.user p {
+  font-weight: bold;
 }
 
-td .remove{
-	background: none;
-	border: none;
-	color: red;
-	font-weight: bold;
-
+td .remove {
+  background: none;
+  border: none;
+  color: red;
+  font-weight: bold;
+}
+.empty-state {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6rem;
+  height: 56rem;
+  font-size: 4rem;
+  box-shadow: -2px 15px 2rem 0px rgb(0 0 0 / 50%);
+  font-family: var(--secondary-font);
+  color: #4e5455;
+  background-color: #030b0d;
 }
 
+footer {
+  padding: 5rem 0;
+  display: grid;
+  justify-content: center;
+  text-shadow: #00ffc9 1px 0px 12px;
+  letter-spacing: 0ch;
+}
+
+footer a {
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+}
