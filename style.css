@@ -6,9 +6,6 @@
 :root {
   font-size: 62.5%;
 
-  --primary-font: "Roboto", sans-serif;
-  --secondary-font: "Roboto Mono", monospace;
-
   --bg-primary: hsl(0, 0%, 0%);
   --bg-input: hsl(191, 65%, 7%);
   --bg-button: hsl(195, 91%, 25%);
@@ -85,7 +82,8 @@ nav input {
   padding: 1.6rem;
 }
 
-::placeholder {
+::placeholder,
+input {
   font-size: 1.6rem;
   color: var(--text-placeholder);
 }
@@ -108,21 +106,21 @@ nav button p {
 }
 
 main {
-  margin-top: 8.7rem;
-  box-shadow: -2px 15px 2rem 0px rgb(0 0 0 / 50%);
   border: 2px solid var(--bg-table-border);
   border-radius: 2rem;
   overflow: hidden;
+  margin-top: 8.7rem;
 }
 
 table {
   width: 100%;
-  border: 1px solid var(--bg-table-border);
   border-collapse: collapse;
+
+  border: 1px solid var(--quaternary-color);
+
   border-radius: 1.2rem 1.2rem 0 0;
-  overflow: hidden;
-  box-shadow: 0px 1px 2rem -1px rgb(0 0 0 / 50%);
-  background: var(--bg-table-primary);
+
+  box-shadow: 0 1rem 2rem -1rem rgba(0, 0, 0, 0.3);
 }
 
 table * {
@@ -136,6 +134,14 @@ table th {
 
   text-align: left;
   font-weight: normal;
+}
+
+table th:first-child {
+  border-top-left-radius: 1.5rem;
+}
+
+table th:last-child {
+  border-top-right-radius: 1.5rem;
 }
 
 table tr:nth-child(odd) {
@@ -182,30 +188,6 @@ td .remove {
   border: none;
   color: red;
   font-weight: bold;
-}
-.empty-state {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 6rem;
-  height: 56rem;
-  font-size: 4rem;
-  box-shadow: -2px 15px 2rem 0px rgb(0 0 0 / 50%);
-  font-family: var(--secondary-font);
-  color: #4e5455;
-  background-color: #030b0d;
-}
 
-footer {
-  padding: 5rem 0;
-  display: grid;
-  justify-content: center;
-  text-shadow: #00ffc9 1px 0px 12px;
-  letter-spacing: 0ch;
-}
-
-footer a {
-  color: #fff;
-  font-weight: 700;
-  text-decoration: none;
+  cursor: pointer;
 }
