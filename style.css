@@ -4,8 +4,6 @@
   box-sizing: border-box;
 }
 :root {
-  font-size: 62.5%;
-
   --bg-primary: hsl(0, 0%, 0%);
   --bg-input: hsl(191, 65%, 7%);
   --bg-button: hsl(195, 91%, 25%);
@@ -19,44 +17,23 @@
   --text-color-hover: hsla(195, 91%, 25%, 1);
   --text-placeholder: hsla(240, 6%, 51%, 1);
   --text-table: hsl(240, 9%, 89%);
+
+  font-size: 62.5%;
+  line-height: 160%;
 }
 
-/* Fonts */
-
-.search,
-input {
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-table th,
-button p {
-  font-family: "Roboto", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-}
-.roboto-mono {
-  font-family: "Roboto Mono", monospace;
-  font-optical-sizing: auto;
-  font-weight: 700;
-  font-style: normal;
-}
-
-/* styles */
 body {
   font-size: 1.6rem;
   background: var(--bg-primary);
-  color: var(var(--text-color));
+  color: var(--text-color);
   width: 100vw;
   height: 100vh;
+  font-family: "Roboto", sans-serif;
 }
+
 body #app {
   margin: 0 auto;
   width: 112rem;
-}
-
-header {
 }
 
 nav {
@@ -74,17 +51,33 @@ nav {
   gap: 0.8rem;
 }
 
-nav input {
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.search,
+input {
+  font-weight: 400;
+}
+
+input {
   background: var(--bg-input);
   width: 46.2rem;
   border: none;
   border-radius: 0.5rem;
   padding: 1.6rem;
+  font-size: 1.6rem;
+  color: var(--text-placeholder);
 }
 
-::placeholder,
-input {
-  font-size: 1.6rem;
+input::placeholder {
   color: var(--text-placeholder);
 }
 
@@ -125,16 +118,22 @@ table {
 }
 
 table * {
-  font-size: 2rem;
   color: var(--text-table);
 }
 
+table th,
+table td {
+  font-family: "Roboto", sans-serif;
+}
+
 table th {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 160%;
+  text-align: left;
+
   background: var(--bg-table-primary);
   padding: 1.6rem 4rem;
-
-  text-align: left;
-  font-weight: normal;
 }
 
 table th:first-child {
@@ -149,6 +148,13 @@ table tr:nth-child(odd) {
   background: var(--bg-table-odd);
 }
 
+table th,
+button p {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
 tr + tr {
   border: 1px solid var(--bg-table-border);
 }
@@ -158,8 +164,9 @@ table tr:nth-child(even) {
 }
 
 table td {
-  padding: 1.6rem 4rem;
+  font-weight: 400;
   text-align: left;
+  padding: 1.6rem 4rem;
 }
 
 td.user {

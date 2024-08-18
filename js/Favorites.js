@@ -4,7 +4,7 @@ export class Favorites {
     this.root = document.querySelector(root);
     this.load();
   }
-
+  // Anotação
   load() {
     this.entries = JSON.parse(localStorage.getItem("@github-gitfav:")) || [];
   }
