@@ -12,11 +12,16 @@
   --bg-table-border: hsla(191, 31%, 42%, 1);
   --bg-table-odd: hsla(195, 61%, 6%, 0.5);
   --bg-table-even: hsla(192, 65%, 7%, 1);
+  --bg-empty: #030b0d;
 
   --text-color: hsl(0, 0%, 100%);
   --text-color-hover: hsla(195, 91%, 25%, 1);
+  --text-color-empty: #4e5455;
   --text-placeholder: hsla(240, 6%, 51%, 1);
   --text-table: hsl(240, 9%, 89%);
+
+  --primary-font: "Roboto", sans-serif;
+  --secondary-font: "Roboto Mono", monospace;
 
   font-size: 62.5%;
   line-height: 160%;
@@ -28,12 +33,16 @@ body {
   color: var(--text-color);
   width: 100vw;
   height: 100vh;
-  font-family: "Roboto", sans-serif;
+  font-family: var(--primary-font);
 }
 
 body #app {
   margin: 0 auto;
   width: 112rem;
+}
+
+a {
+  text-decoration: none;
 }
 
 nav {
@@ -117,12 +126,38 @@ table {
   box-shadow: 0 1rem 2rem -1rem rgba(0, 0, 0, 0.3);
 }
 
-table * {
+.empty-state {
+  display: none;
+  height: 54rem;
+
+  font-family: var(--secondary-font);
+  font-size: 4rem;
+  font-weight: bold;
+  color: var(--text-color-empty);
+  justify-content: center;
+  align-items: center;
+  gap: 6rem;
+
+  background-color: var(--bg-empty);
+}
+
+.empty-state img {
+  width: 6rem;
+  height: 6rem;
+}
+
+.active {
+  display: flex;
+}
+
+table *,
+a {
   color: var(--text-table);
 }
 
 table th,
-table td {
+table td,
+a {
   font-family: "Roboto", sans-serif;
 }
 
@@ -183,10 +218,6 @@ td.user img {
   border-radius: 50%;
 }
 
-td.user a {
-  text-decoration: none;
-}
-
 td.user p {
   font-weight: bold;
 }
@@ -198,4 +229,13 @@ td .remove {
   font-weight: bold;
 
   cursor: pointer;
+}
+
+footer p {
+  display: flex;
+  margin-top: 2rem;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--text-color-empty);
 }

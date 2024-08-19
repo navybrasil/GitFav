@@ -26,6 +26,7 @@
               Digite o Github username que quer favoritar
             </label>
             <input
+              id="input-search"
               type="text"
               placeholder="Digite o Github username que quer favoritar"
             />
@@ -48,7 +49,19 @@
           </thead>
           <tbody></tbody>
         </table>
+        <div class="empty-state active">
+          <img
+            src="assets/starFavicon.svg"
+            alt="Star with surprise expression"
+          />
+          <p>There are no favorites yet</p>
+        </div>
       </main>
+      <footer>
+        <a href="https://github.com/navybrasil/GitFav"
+          ><p>Developed by Eliéser for Explore RocketSeat</p>
+        </a>
+      </footer>
     </div>
   </body>
 </html>

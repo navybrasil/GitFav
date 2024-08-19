@@ -7,6 +7,9 @@ export class Favorites {
 
   load() {
     this.entries = JSON.parse(localStorage.getItem("@github-gitfav:")) || [];
+
+    if (this.entries.length == 0) return;
+    this.updateEmptyState();
   }
 
   save() {
@@ -30,12 +33,14 @@ export class Favorites {
       this.entries = [user, ...this.entries];
       this.update();
       this.save();
+      this.updateEmptyState();
     } catch (error) {
       alert(error.message);
     }
   }
 
   delete(user) {
+    this.updateEmptyState();
     const filteredEntries = this.entries.filter(
       (entry) => entry.login !== user.login
     );
@@ -61,6 +66,7 @@ export class FavoritesView extends Favorites {
       const { value } = this.root.querySelector(".search input");
 
       this.add(value);
+      this.clearInput();
     };
   }
 
@@ -124,5 +130,22 @@ export class FavoritesView extends Favorites {
     this.tbody.querySelectorAll("tr").forEach((tr) => {
       tr.remove();
     });
+  }
+
+  updateEmptyState() {
+    const emptyStateElement = this.root.querySelector(".empty-state");
+    const hasUsers = this.entries.length;
+
+    if (hasUsers == 0 || (hasUsers == 1 && emptyStateElement != "active")) {
+      emptyStateElement.classList.toggle("active");
+    }
+  }
+
+  clearInput() {
+    const input = document.getElementById("input-search");
+
+    if (input) {
+      input.value = "";
+    }
   }
 }
