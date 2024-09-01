@@ -190,6 +190,14 @@ button p {
   font-style: normal;
 }
 
+button.favorite:active {
+  transform: scale(0.9);
+}
+
+button.remove:active {
+  transform: scale(0.7);
+}
+
 tr + tr {
   border: 1px solid var(--bg-table-border);
 }
