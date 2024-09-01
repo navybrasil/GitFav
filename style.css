@@ -198,10 +198,24 @@ table tr:nth-child(even) {
   background: var(--bg-table-even);
 }
 
+table th:nth-child(2),
+table th:nth-child(3),
+table th:nth-child(4) {
+  text-align: center;
+  vertical-align: middle;
+}
+
 table td {
   font-weight: 400;
   text-align: left;
   padding: 1.6rem 4rem;
+}
+
+table td:nth-child(2),
+table td:nth-child(3),
+table td:nth-child(4) {
+  text-align: center;
+  vertical-align: middle;
 }
 
 td.user {
@@ -225,10 +239,12 @@ td.user p {
 td .remove {
   background: none;
   border: none;
-  color: red;
-  font-weight: bold;
 
   cursor: pointer;
+}
+
+.ph-trash {
+  font-size: 2rem;
 }
 
 footer p {

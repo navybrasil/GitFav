@@ -1,3 +1,5 @@
-import { FavoritesView } from "./Favorites.js";
+import { FavoritesView } from "./FavoritesView.js";
+import { setupKeyEvents } from "./keyEvents.js";
 
-new FavoritesView("#app");
+const favoritesView = new FavoritesView("#app");
+setupKeyEvents(favoritesView);
